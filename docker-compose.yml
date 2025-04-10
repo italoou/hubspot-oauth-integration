@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  hubspot-integration-api:
+      container_name: hubspot-integration-api
+      image: hubspot-integration-api-image
+      restart: unless-stopped
+      build: .
+      ports:
+        - 8080:8080
+      networks:
+        - hubspot-integration-api-network
+
+networks:
+  hubspot-integration-api-network:
+    driver: bridge
